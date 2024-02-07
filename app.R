@@ -28,7 +28,7 @@ library(shinyvalidate)
 library(tidyr)
 library(ggdist)
 # read data ---------------------------------------------------------------
-setwd("~/Library/CloudStorage/Box-Box/2024_Spring/PSY353/Shiny/Shinytest/")
+# setwd("~/Library/CloudStorage/Box-Box/2024_Spring/PSY353/Shiny/Shinytest/")
 # dat <- fread("sema3_test.csv")
 # names(dat)
 # dat <- dat %>%
@@ -192,7 +192,7 @@ server <- function(input, output) {
       tryCatch({ # tryCatch is used to prevent the app from crashing
         # in case the dataset doesn't exist (e.g. typo)
         # Attempt to read the dataset
-        data <- fread(paste0(getwd(), "/P_dat/", PID(), ".csv"))
+        data <- fread(paste0(PID(), ".csv"))
         
         if (!is.null(data)) { # show pop up message if data is succesfully loaded
           data_loaded(TRUE)
